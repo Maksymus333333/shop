@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #3B3B3B;
+    font-size: 20px;
+    font-family: Helvetica, sans-serif;
+    color: #F3F2F2;
+}
+
+a {
+    text-decoration: none;
+    color: #F3F2F2;
+}
+
+.name {
+    padding: 0 35px;
+    width: calc(100% - 70px);
+    height: 20%;
+    font-size: 35px;
+    background-color: #303030;
+}
+
+.firstpart {
+    color: #9A0BD0;
+}
+
+.secondpart {
+    color: #F3F2F2;
+}
+
+.body {
+    padding: 20px;
+    width: calc(100% - 20px);
+    height: 100%;
+}
+
+
+
+
+
+
+
+.menu{
+	transition: .4s ease-in-out;
+	font-size: 15px;
+	height: 100%;
+	background-color: #9A0BD0;
+	width: 3%;
+}
+
+.menu:hover{
+	transition: .4s ease-in-out; 
+	width: 20%;
+}
+
+.items{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.item{
+	transition: .4s ease-in-out;
+	padding: 25px;
+	margin: 40px;
+	border-width: 10px; border-color: black; border-radius: 10px;
+	background: linear-gradient(#9A20FF, #EE20FF);
+	height: 250px;
+	width: 250px;
+	font-size: 30px;
+}
+
+.item:hover{
+	transition: .4s ease-in-out; 
+	height: 320px;
+}
+
+.item:hover .buybutton{transition: .4s ease-in-out; opacity: 1;}
+
+.item > img{
+	width: 250px;
+	border-radius: 10px;
+}
+
+.buybutton > a > div {
+	width: 100%;
+	margin-left: 10px;
+	border-radius: 5px;
+	background-color: #F3F2F2;
+}
+
+.buybutton{
+	opacity: 0;
+	transition: .4s ease-in-out;
+}
+
+.itemname{
+	font-size: 60px;
+}
+
+.img{
+	height: 400px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.infoimg{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.img > img{
+	margin-left: 20px; margin-right: 20px; margin-bottom: 20px;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.info{
+	width: 200px;
+	padding-left: 50px; padding-right: 50px;
+	border-radius: 10px;
+	background-color: #474747;
+}
+/* Змінено анімацію для плавності */
+
+
+.hidden-menu {
+    font-family: 'Roboto', sans-serif; /* Застосовано новий шрифт */
+    display: block;
+    position: fixed;
+    list-style: none;
+    padding: 20px; 
+    margin: 0;
+    box-sizing: border-box;
+    width: 300px;
+    background-color: #474747;
+    color: white;
+    height: 100%;
+    top: 0;
+    left: -300px;
+    transition: left 0.4s ease-in-out;
+    z-index: 2;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+/* Стилі для тексту меню та категорій */
+.hidden-menu li {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px 0;
+}
+
+.menu-category {
+    color: #F3F2F2;
+    font-weight: bold; /* Зроблено текст категорій жирним */
+}
+
+.menu a {
+    color: #F3F2F2;
+    text-decoration: none;
+    font-weight: normal; /* Зроблено текст пунктів меню звичайним */
+    font-size: 18px; /* Збільшено розмір тексту для пунктів меню */
+    transition: color 0.3s; /* Додано перехід для кольору тексту при наведенні */
+}
+
+.menu a:hover {
+    color: #9A0BD0;
+}
+
+
+.hidden-menu-ticker {
+    display: none;
+}
+
+.btn-menu {
+    color: #fff;
+    background-color: #666;
+    padding: 5px;
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+    transition: left 0.4s ease-in-out; /* Змінено час анімації на 0.4s і використано ease-in-out */
+    z-index: 3;
+    width: 25px;
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+}
+
+.btn-menu span {
+    display: block;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px 0 0;
+    transition: all 0.1s linear 0.23s;
+    position: relative;
+}
+
+.btn-menu span.first {
+    margin-top: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu {
+    left: 260px;
+}
+
+.hidden-menu-ticker:checked ~ .hidden-menu {
+    left: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.first {
+    transform: rotate(45deg); /* Виправлено для забезпечення кращого відображення анімації */
+    top: 10px;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.second {
+    opacity: 0;
+}
+
+.hidden-menu-ticker:checked ~ .btn-menu span.third {
+    transform: rotate(-45deg); /* Виправлено для забезпечення кращого відображення анімації */
+    top: -10px;
+}
+
+.buybutton > a > div {
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: #F3F2F2;
+    color: #000; /* Додано колір тексту */
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out; /* Додано анімацію для зміни кольору тексту */
+}
+
+.buybutton:hover > a > div {
+    background-color: #9A0BD0;
+    color: #FFF; /* Змінено колір тексту при наведенні */
+}
